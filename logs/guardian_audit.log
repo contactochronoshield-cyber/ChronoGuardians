@@ -1,0 +1,10 @@
+{"timestamp": "2026-07-24 11:18:00", "load_avg": ["0.0", "0.0", "0.0"], "ram_used_percent": 68.94, "status": "SECURE_OFFLINE_NODE"}
+{"timestamp": "2026-07-24 11:18:10", "load_avg": ["0.0", "0.0", "0.0"], "ram_used_percent": 68.51, "status": "SECURE_OFFLINE_NODE"}
+{"timestamp": "2026-07-24 11:18:20", "load_avg": ["0.0", "0.0", "0.0"], "ram_used_percent": 68.91, "status": "SECURE_OFFLINE_NODE"}
+{"timestamp": "2026-07-24 11:18:39", "load_avg": ["0.0", "0.0", "0.0"], "ram_used_percent": 69.4, "status": "SECURE_OFFLINE_NODE"}
+{"timestamp": "2026-07-24 11:24:11", "load_avg": ["0.0", "0.0", "0.0"], "ram_used_percent": 70.64, "status": "SECURE_OFFLINE_NODE"}
+{"timestamp": "2026-07-24 11:24:21", "load_avg": ["0.0", "0.0", "0.0"], "ram_used_percent": 71.26, "status": "SECURE_OFFLINE_NODE"}
+{"timestamp": "2026-07-24 11:24:31", "load_avg": ["0.0", "0.0", "0.0"], "ram_used_percent": 71.13, "status": "SECURE_OFFLINE_NODE"}
+{"timestamp": "2026-07-24 11:25:25", "load_avg": ["0.0", "0.0", "0.0"], "ram_used_percent": 71.17, "status": "SECURE_OFFLINE_NODE"}
+{"timestamp": "2026-07-24 11:25:35", "load_avg": ["0.0", "0.0", "0.0"], "ram_used_percent": 70.46, "status": "SECURE_OFFLINE_NODE"}
+{"timestamp": "2026-07-24 11:27:06", "load_avg": ["0.0", "0.0", "0.0"], "ram_used_percent": 70.97, "status": "SECURE_OFFLINE_NODE"}

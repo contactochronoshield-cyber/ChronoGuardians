@@ -1,0 +1,6 @@
+{
+  "node_name": "Sovereign-Node-01",
+  "check_interval_seconds": 10,
+  "alert_ram_threshold_percent": 85.0,
+  "log_path": "logs/guardian_audit.log"
+}
