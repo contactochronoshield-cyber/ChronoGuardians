@@ -1,6 +1,11 @@
 {
-  "node_name": "Sovereign-Node-01",
+  "node_name": "Chrono-Sovereign-Termux",
   "check_interval_seconds": 10,
   "alert_ram_threshold_percent": 85.0,
-  "log_path": "logs/guardian_audit.log"
+  "alert_cpu_threshold_percent": 85.0,
+  "alert_disk_threshold_percent": 90.0,
+  "telegram_bot_token": "",
+  "telegram_chat_id": "",
+  "log_path": "logs/guardian_audit.log",
+  "enable_telegram": true
 }

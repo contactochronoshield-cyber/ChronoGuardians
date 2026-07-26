@@ -1,27 +1,42 @@
 #!/bin/bash
 
-echo "=================================================="
-echo "   🛡️ INSTALADOR OFICIAL: CHRONO GUARDIAN"
-echo "   Chrono Shield Networks - Soberanía Digital"
-echo "=================================================="
+echo "🛡️ [CHRONOGUARDIANS] Iniciando instalación soberana..."
 
-# 1. Definir directorios
-INSTALL_DIR="$HOME/chronoguardian"
-mkdir -p "$INSTALL_DIR/core" "$INSTALL_DIR/logs"
+# 1. Verificar directorios y dependencias básicas
+mkdir -p logs forensic_logs src/core src/web
 
-echo "[*] Verificando entorno e instalando dependencias mínimas..."
-if command -v pkg &> /dev/null; then
-    pkg update -y && pkg install python -y
-elif command -v apt &> /dev/null; then
-    sudo apt update && sudo apt install -y python3 python3-pip
+# 2. Crear entorno virtual si no existe
+if [ ! -d "venv" ]; then
+    echo "📦 Creando entorno virtual Python..."
+    python3 -m venv venv
 fi
 
-# 2. Asegurar que Flask esté disponible
-python3 -c "import flask" 2>/dev/null || pip install flask
+# 3. Activar entorno e instalar requirements
+echo "📥 Instalando dependencias desde requirements.txt..."
+source venv/bin/activate
+pip install --upgrade pip
+pip install -r requirements.txt
 
-echo "[+] ¡Dependencias listas!"
-echo "[+] Estructura de Chrono Guardian configurada en: $INSTALL_DIR"
-echo "--------------------------------------------------"
-echo "Para iniciar el sistema completo, ejecuta:"
-echo "cd ~/chronoguardian && python3 run.py"
-echo "=================================================="
+# 4. Configuración interactiva de Telegram
+echo ""
+echo "💬 Configuración de Notificaciones (Telegram)"
+read -p "Introduce tu Telegram Bot Token (o presiona Enter para omitir): " BOT_TOKEN
+read -p "Introduce tu Telegram Chat ID (o presiona Enter para omitir): " CHAT_ID
+
+if [ ! -z "$BOT_TOKEN" ] && [ ! -z "$CHAT_ID" ]; then
+    # Actualizar config.json con los datos ingresados
+    python3 -c "
+import json
+with open('config.json', 'r') as f:
+    cfg = json.load(f)
+cfg['telegram_bot_token'] = '$BOT_TOKEN'
+cfg['telegram_chat_id'] = '$CHAT_ID'
+with open('config.json', 'w') as f:
+    json.dump(cfg, f, indent=4)
+"
+    echo "✅ Credenciales de Telegram guardadas de forma segura en config.json."
+fi
+
+echo ""
+echo "✨ ¡Instalación completada con éxito!"
+echo "Para iniciar el agente ejecuta: source venv/bin/activate && python agent.py"
